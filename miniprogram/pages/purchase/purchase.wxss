@@ -1,0 +1,282 @@
+van-empty{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+/* view {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+}
+input {
+  width: 550rpx;
+  height: 80rpx;
+  border: 2rpx solid #DDD;
+  border-radius: 8rpx;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+button {
+  width: 130rpx;
+  font-size: 28rpx;
+  height: 80rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.kg{
+  width: 100vw;
+  height: 130rpx;
+}
+/*扫描设备*/
+.bluetooth-head{
+  display: flex;
+  flex-direction: row;
+}
+.bluetooth-head-left{
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content : space-around;
+}
+.bluetooth-head-left view{
+  border-left: 15rpx solid #1296db;
+}
+/* .scanBluetooth-bg{
+  width: 100%;
+  width: 300rpx;
+  height: 73%;
+} */
+/*点击扫描*/
+/* .bluetooth-head-left view:nth-of-type(1){
+  position: absolute;
+  top: 1.8%;
+  left: 24%;
+  font-size: 1.1em;
+  color: white;
+}
+.bluetooth-head-left view:nth-of-type(2){
+  margin-left: 5rpx;
+} */
+
+/*蓝牙图标*/
+.bluetooth-head-right{
+  flex: 30%;
+  text-align: right;
+}
+.bluetooth-img{
+  width: 75rpx;
+  height: 75rpx;
+}
+/* .bluetooth-head-right{
+  margin-top: 8rpx;
+} */
+/*标题某某进货单*/
+.title{
+  text-align: center;
+  font-size: 1.4em;
+  margin: 20rpx 0 20rpx 0;
+}
+/*每个商品*/
+/*居中*/
+/* .items-bg-view{
+  display: flex;
+  justify-content: center;
+} */
+.items-bg-view{
+  position: relative;
+  height: 400rpx;
+}
+.items-bg{
+  padding:0;
+  margin: 0;
+  /* width: 100vw; */
+  width: 100%;
+  height: 400rpx;
+  /* margin: 0 auto; */
+  /* text-align: center; */
+  /* vertical-align:middle; */
+}
+/* .items-bg image{
+  height: 100%;
+} */
+.items{
+  width: 95vw;
+  /* height: 100%; */
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%,0);
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  /* display: flex;
+  flex-direction: column;
+  align-content: space-around; */
+}
+/*第一排*/
+.one{
+  display: flex;
+  flex-direction: row;
+}
+/*序号*/
+.indexs{
+  flex:30%;
+  border-left: 15rpx solid #1296db;
+}
+/*供货商*/
+.ghs{
+  flex:70%;
+  display: flex;
+  flex-direction: row;
+}
+.ghs input {
+  width: 300rpx;
+  /* height: 80rpx; */
+  border-bottom: 2rpx solid #DDD;
+  border-radius: 8rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+/*第二排*/
+.two{
+  margin-top: 70rpx;
+  margin-bottom: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/*条形码*/
+.two .barcode{
+  flex:38%;
+  /* height: 80rpx; */
+  border-bottom: 2rpx solid #DDD;
+  border-radius: 8rpx;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+/**/
+.two .scan{
+  flex: 8%;
+}
+/*步进器*/
+.two .num{
+  flex: 26%;
+}
+/*进价*/
+.two .purchase{
+  flex: 30%;
+  display: flex;
+  flex-direction: row;
+}
+.two .purchase text{
+  float: left;
+}
+.two .purchase input{
+  flex: 50%;
+  border-bottom: 2rpx solid #DDD;
+  border-radius: 8rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+/*第三排*/
+.three{
+  /* margin-top: 10rpx; */
+  /* margin-bottom: 30rpx; */
+  display: flex;
+  flex-direction: row;
+}
+/*商品名*/
+.three .goodname{
+  flex:40%;
+  border-bottom: 2rpx solid #DDD;
+  border-radius: 8rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+/*规格*/
+.three .specification{
+  flex:30%;
+  border-bottom: 2rpx solid #DDD;
+  border-radius: 8rpx;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+/*小计*/
+.three .sell{
+  flex:30%;
+  text-align: right;
+}
+/*添加删除按钮*/
+.add-del-view{
+  display: flex;
+  flex-direction: row;
+}
+.add-del-view button{
+  width: 40%;
+}
+/* .add-del-view button:nth-of-type(1){
+  background-color: #F2753F;
+} */
+.add-del-view button:nth-of-type(2){
+  background-color: #41ade8;
+}
+/* .add-del-view button::after{
+} */
+/*合计 计算区域*/
+.addSum{
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items : flex-end;
+  border-bottom: 3rpx double #41ade8;
+}
+/* .addSum van-button{
+  background-color: #41ade8;
+  width: 30%;
+  justify-content : flex-start;
+} */
+/* .addSum button:hover{
+  background-color: cornflowerblue;
+} */
+.addSum .Sumbtn{
+  width: 33.5%;
+}
+.addSum .SumNum{
+  width: 30%;
+  text-align: right;
+}
+.addSum .SumPrice{
+  width: 36.5%;
+  text-align: right;
+}
+.addSum view text:nth-of-type(1){
+  color: coral;
+  font-size: 1.6em;
+}
+/*遮罩层*/
+.devices_summary {
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 16px;
+}
+.device_list {
+  height: 400px;
+  margin: 30px 5px;
+  margin-top: 0;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  width: auto;
+}
+.device_item {
+  border-bottom: 1px solid #EEE;
+  padding: 10px;
+  color: #666;
+}
+.device_item_hover {
+  background-color: rgba(0, 0, 0, .1);
+}

@@ -1,0 +1,4 @@
+/* pages/supplier/supplier.wxss */
+.item{
+  margin-top: 20rpx;
+}

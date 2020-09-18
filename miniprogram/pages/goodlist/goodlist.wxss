@@ -1,0 +1,201 @@
+/* pages/goodlist/goodlist.wxss */
+page{
+  background-color: ghostwhite;
+}
+/*标题栏*/
+.van-col{
+  border:1px solid #eee;
+  text-align: center;
+  
+}
+
+/*修改按钮*/
+.viewupdate{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  border-radius: 5rpx  !important;
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #FF534D;
+}
+/* .updateform button{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+} */
+/*提交按钮样式*/
+.submitbtn{
+  /*字体颜色*/
+  color:#1989fa;
+  /*适配距离*/
+  position: relative;
+  top:2rpx;
+
+  border: none;
+  float: right;
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+  /* text-align: center; */
+}
+/*清除按钮边框*/
+.submitbtn::after {
+  border: none
+}
+/* .submitbtn.plain {
+  border: none;
+  border-color: transparent;
+} */
+/* button.submitbtn{
+  background-color: transparent;
+} */
+
+/*扫描*/
+.scanning{
+  width: 55rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -4rpx;
+}
+/*每个商品*/
+.goodlist-item{
+  background-color: white;
+  width: 90%;
+  margin:0 auto;
+  border-radius: 15rpx;
+  padding:20rpx;
+  border:1px solid #eee;
+  /* margin-top: 30rpx; */
+  margin-bottom: 30rpx;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/*商品名称*/
+.goodlist-item .barcode text{
+  font-size: 1.2em;
+  color: red;
+}
+.goodlist-item .price .purchaseprice{
+  font-size: 1.4em;
+  color: red;
+}
+.goodlist-item .price .sellingprice{
+  font-size: 1.1em;
+}
+/*标签*/
+.van-tag{
+  margin-right: 8rpx;
+}
+.goodlist-smallitem{
+  width: 20rpx;
+  height: 55rpx;
+  background-color: rgb(255, 52, 69);
+  position: absolute;
+  top: 37%;
+  right: 1%;
+  border-radius: 2rpx;
+}
+/*数据为空显示*/
+van-empty{
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+/*搜索商品列表：左滑修改*/
+.searchtitle{
+  margin-bottom: 8rpx;
+}
+.searchtitle-head{
+  font-size: 0.9em;
+  padding-left: 20rpx;
+}
+.searchtitle-foot{
+  float: right;
+  padding-right: 20rpx;
+  padding-top: 5rpx;
+  /* font-size: 0.9em; */
+  vertical-align: middle;
+  font-size: 0.8em;
+}
+.searchtitle-foot-img{
+  position: relative;
+  top: 5rpx;
+}
+/*统计数据*/
+.listdata{
+  display: flex;
+  flex-direction: row;
+}
+/*小块*/
+.listtitle{
+  border-radius: 20rpx;
+  background-color: white;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 50%;
+  border: 1px solid #eee;
+  position: relative;
+}
+/*条 种*/
+.listdataspan{
+  position: absolute;
+  bottom: 0;
+  right: 8rpx;
+  font-size: 0.8em;
+  color: gray;
+}
+/*数据*/
+.listdatas{
+  padding-top: 10rpx;
+  color: orange;
+  font-size: 2.1em;
+  display: block;
+  text-align: center;
+}
+/*标题*/
+.listdatatitle{
+  padding-left: 10rpx;
+  color: grey;
+  font-size: 0.9em;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 3rpx;
+}
+
+/*生成条形码*/
+.generatBbarcode{
+  margin:0 auto
+}
+.generatBbarcode-view{
+  margin-top: 80rpx;
+  width: 100vw;
+  height: 160rpx;
+
+}
+.bindtapgoodlist{
+  display: flex;
+  flex-direction: column;
+  align-items : center;
+}
+.purchaseprice{
+  font-size: 1.4em;
+  color: red;
+}
+.barcode text{
+  font-size: 1.2em;
+  color: red;
+}

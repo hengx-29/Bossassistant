@@ -1,0 +1,108 @@
+<!-- 搜索区 -->
+<van-search value="{{ search }}" placeholder="请输入搜索条形码或关键词" use-action-slot bind:change="onChange" bind:search="onSearch">
+	<view slot="action" bind:tap="onClick">
+		<image class="scanning" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E6%89%AB%E6%8F%8F.png?sign=485ba746907aee353da7dee008b7cc16&t=1595230672"></image>
+	</view>
+</van-search>
+<view class="listdata">
+	<view class="listtitle">
+		<view class="listdatatitle">商品数据</view>
+		<text class="listdatas">{{count}}</text>
+		<text class="listdataspan">条</text>
+	</view>
+	<view class="listtitle">
+		<view class="listdatatitle">类别</view>
+		<text class="listdatas">{{categoryCount}}</text>
+		<text class="listdataspan">种</text>
+	</view>
+</view>
+<view class="searchtitle">
+		<text class="searchtitle-head">搜索商品列表：</text>
+		<view class="searchtitle-foot">
+			<van-icon name="info-o" class="searchtitle-foot-img"/>
+			<text>点击查看/左滑修改</text>
+		</view>
+</view>
+<!-- 数据为空显示，空列表 -->
+<view wx:if="{{vanempty}}">
+	<van-empty description="未查询到数据，或请刷新页面" />
+</view>
+<view wx:else>
+	<!-- 商品渲染列表 -->
+	<view wx:for="{{goodlist}}" wx:key="index">
+		<van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose" data-id="{{item._id}}" data-idx="{{index}}">
+			<!-- <view slot="left">选择</view> -->
+			<van-cell-group>
+				<!-- <van-cell title="商品" value="左滑删除"/> -->
+				<view class="goodlist-item" data-id="{{item._id}}" data-idx="{{index}}" data-barcode="{{item.barcode}}" bindtap="generatBbarcode" bindlongpress="printBbarcode">
+					<view class="barcode">条形码：<text>{{item.barcode}}</text></view>
+					<view class="name">商品名：<text>{{item.name}}</text></view>
+					<view class="price">进价：<text class="purchaseprice">{{item.purchaseprice}}</text>元 售价：<text class="sellingprice">{{item.sellingprice}}</text>元</view>
+					<van-tag color="#ff976a" plain>自编码：{{item.selfcode}}</van-tag>
+					<view>
+						<van-tag color="#f2826a">供货商：{{item.supplier}}</van-tag>
+						<van-tag type="success">类别：{{item.category}}</van-tag>
+						<van-tag color="#7232dd">规格：{{item.specification}}</van-tag>
+					</view>
+					<view class="goodlist-smallitem"></view>
+				</view>
+			</van-cell-group>
+			<view slot="right" class="viewupdate">
+				<text>修改</text>
+			</view>
+		</van-swipe-cell>
+	</view>
+</view>
+<!-- <view>到底了~</view> -->
+<!-- 弹出框 -->
+<!-- <van-dialog id="van-dialog" /> -->
+<!-- 消息通知 -->
+<van-notify id="van-notify" />
+<!-- 查询商品失败提示 -->
+<van-toast id="van-toast" />
+<van-dialog
+  use-slot
+  title="商品详情"
+  show="{{ show }}"
+	confirmButtonText="修改"
+	show-confirm-button="{{false}}"
+  show-cancel-button
+  bind:cancel="dialogOnClose"
+>
+	<form bindsubmit="updategoodlist">
+		<van-cell-group>
+			<van-field required clearable label="条形码" name="barcode" placeholder="请输入条形码" value="{{smbarcode}}" icon="scan" bind:click-icon="onClickIcon"/>
+			<van-field required clearable label="商品名" name="name" placeholder="请输入商品名称" value="{{smname}}" icon="warning-o" />
+			<van-field clearable label="供货商" name="supplier" placeholder="请输入供货商" value="{{smsupplier}}"/>
+			<van-field clearable label="类别" name="category" placeholder="请输入类别" value="{{smcategory}}"/>
+			<van-field required clearable label="规格" name="specification" placeholder="请输入规格" value="{{smspecification}}" icon="warning-o"/>
+			<van-field required clearable label="进价" name="purchaseprice" placeholder="请输入进价" value="{{smpurchaseprice}}"/>
+			<van-field required clearable label="售价" name="sellingprice" placeholder="请输入售价" value="{{smsellingprice}}"/>
+			<van-field clearable label="自编码" name="selfcode" placeholder="请输入自编码" value="{{smselfcode}}"/>
+		</van-cell-group>
+		<button formType="submit" class="submitbtn">修改</button>
+	</form>
+</van-dialog>
+
+<van-popup show="{{ showBarcode }}"
+  round 
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onCloseBarcode">
+  <view class="bindtapgoodlist">
+			<view class="generatBbarcode-view">
+			<canvas canvas-id="barcode" class="generatBbarcode"/>
+			</view>
+		<view class="barcode">条形码：<text>{{smbarcode}}</text></view>
+		<view class="name">商品名称：<text>{{smname}}</text></view>
+		<view class="price">进价：<text class="purchaseprice">{{smpurchaseprice}}</text>元    售价：<text class="sellingprice">{{smsellingprice}}</text>元</view>
+    <van-tag color="#ff976a" plain>自编码：{{smselfcode}}</van-tag>
+		<view>
+			<van-tag color="#f2826a">供货商：{{smsupplier}}</van-tag>
+			<van-tag type="success">类别：{{smcategory}}</van-tag>
+			<van-tag color="#7232dd">规格：{{smspecification}}</van-tag>
+		</view>
+  </view>
+</van-popup>

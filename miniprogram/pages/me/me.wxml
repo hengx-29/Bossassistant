@@ -1,0 +1,35 @@
+<!--pages/me/me.wxml-->
+<view class="login">
+	<image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/jjyexample.png?sign=dd8d40cf018c66e85f124ccacbfe6048&t=1595232735"></image>
+	<text>admin</text>
+</view>
+<van-grid column-num="3">
+	<van-grid-item icon="balance-pay" text="全部账单"  dot link-type="navigateTo"
+    url="/pages/billmanage/billmanage" />
+	<van-grid-item icon="cash-on-deliver" text="待处理" badge="{{unfinishbill}}" link-type="navigateTo"
+    url="/pages/unfinishbill/unfinishbill"/>
+	<van-grid-item icon="peer-pay" text="已结算" dot link-type="navigateTo"
+    url="/pages/finishbill/finishbill"/>
+</van-grid>
+<van-cell-group>
+	<van-cell title="商品库管理" is-link icon="flag-o" link-type="navigateTo"
+  url="/pages/goodlist/goodlist"/>
+	<van-cell title="采购单管理" is-link  icon="shopping-cart-o" link-type="navigateTo"
+  url="/pages/purchasemanage/purchasemanage"/>
+	<van-cell title="供货商管理" is-link  icon="logistics" link-type="navigateTo"
+  url="/pages/supplier/supplier" />
+	<van-cell title="销售数据管理" is-link icon="bar-chart-o" link-type="navigateTo"
+  url="/pages/sellmanage/sellmanage" />
+</van-cell-group>
+<van-cell-group>
+	<!-- <van-cell title="打印设置" is-link icon="setting-o" title-style="new" /> -->
+	<van-cell  is-link icon="setting-o" link-type="navigateTo"
+  url="/pages/printsetup/printsetup">
+	  	<view slot="title">
+    	<view class="van-cell-text">打印设置 <van-tag type="danger">NEW</van-tag></view>
+  	</view>
+	</van-cell>
+	<van-cell title="客服" is-link bind:click="call" icon="phone-o"/>
+	<van-cell title="关于我们" is-link  icon="friends-o" link-type="navigateTo"
+  url="/pages/our/our"/>
+</van-cell-group>

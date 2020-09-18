@@ -1,0 +1,30 @@
+<image class="bg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%85%A5%E5%BA%93%E8%83%8C%E6%99%AF%E5%9B%BE%E5%8E%8B%E7%BC%A9.png?sign=e69321f47d84f458ccd8b57f9b87b732&t=1596295222"></image>
+<view class="newform">
+  <image class="formimg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%85%A5%E5%BA%93%E5%8D%A1%E9%80%9A%E4%BA%BA%E7%89%A9%E5%8E%8B%E7%BC%A9.jpg?sign=7ab687546b0a968a4049d52464cb9fab&t=1597297761" mode="aspectFill"></image>
+  <form bindsubmit="addbtnSub" bindreset="delbtnSub">
+    <!-- <input name="barcode" placeholder="请输入条形码" value="6913825649859"></input>
+    <input name="name" placeholder="请输入商品名称" value="测试商品"></input>
+    <input name="supplier" placeholder="请输入供货商" value="测试"></input>
+    <input name="category" placeholder="请输入类别" value="测试"></input>
+    <input name="specification" placeholder="请输入规格" value="500g"></input>
+    <input name="purchaseprice" placeholder="请输入进价" value="0.01"></input>
+    <input name="sellingprice" placeholder="请输入售价" value="9.9"></input>
+    <input name="selfcode" placeholder="请输入自编码" value="202007230238"></input> -->
+    <van-cell-group>
+      <van-field required clearable label="条形码" name="barcode" placeholder="请输入条形码" value="{{smbarcode}}" icon="scan" bind:click-icon="onClickIcon"/>
+      <van-field required clearable label="商品名" name="name" placeholder="请输入商品名称" value="{{smname}}" icon="warning-o" />
+      <van-field clearable label="供货商" name="supplier" placeholder="请输入供货商" value="{{smsupplier}}"/>
+      <van-field clearable label="类别" name="category" placeholder="请输入类别" value="{{smcategory}}"/>
+      <van-field required clearable label="规格" name="specification" placeholder="请输入规格" value="{{smspecification}}" icon="warning-o"/>
+      <van-field required clearable label="进价" name="purchaseprice" placeholder="请输入进价" value="{{smpurchaseprice}}"/>
+      <van-field required clearable label="售价" name="sellingprice" placeholder="请输入售价" value="{{smsellingprice}}"/>
+      <van-field clearable label="自编码" name="selfcode" placeholder="请输入自编码" value="{{smselfcode}}"/>
+    </van-cell-group>
+    <view class="btn">
+    <button form-type="reset">重置</button>
+    <button type="primary" form-type="submit">提交入库</button>
+    </view>
+  </form>
+</view>
+
+<van-notify id="van-notify" />

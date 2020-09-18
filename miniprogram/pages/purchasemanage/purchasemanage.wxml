@@ -1,0 +1,34 @@
+<!--pages/purchasemanage/purchasemanage.wxml-->
+<view class="searchtitle">
+	<text class="searchtitle-head">采购单列表：</text>
+	<view class="searchtitle-foot">
+		<van-icon name="info-o" class="searchtitle-foot-img"/>
+		<text>左滑删除</text>
+	</view>
+</view>
+  <!-- 商品渲染列表 -->
+	<view wx:for="{{inputLists}}" wx:key="index">
+		<van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose" data-id="{{item._id}}" data-idx="{{index}}">
+			<van-cell-group>
+				<view class="inputLists-item" data-id="{{item._id}}" data-idx="{{index}}" bindtap="selectBack">
+					<view >条形码：<text>{{item.inputList[0].barCode}}</text></view>
+					<view >商品名：<text>{{item.inputList[0].goodName}}</text></view>
+          <view >供货商：<text>{{item.inputList[0].ghsValue}}</text></view>
+          <view>......</view>
+					<van-tag color="#7232dd">保存时间：{{item.time}}</van-tag>
+				</view>
+			</van-cell-group>
+			<view slot="right" class="viewdel">
+				<text>删除</text>
+			</view>
+		</van-swipe-cell>
+	</view>
+
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" show="{{ showDialog }}"/>
+<van-notify id="van-notify" />
+          <!-- <view wx:for="{{item.inputList}}" wx:key="indexs" wx:item="items">
+					  <view class="barcode">条形码：<text>{{items.barcode}}</text></view>
+					  <view class="name">商品名：<text>{{items.name}}</text></view>
+            <view class="name">供货商：<text>{{items.supplier}}</text></view>
+          </view> -->

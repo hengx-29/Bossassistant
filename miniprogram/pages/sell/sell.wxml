@@ -1,0 +1,101 @@
+<view class="sell-right-title">销售数据分析<van-tag class="vantag" mark color="#1296db">戳下方智能分析</van-tag></view>
+<view class="sell-head" bindtap="AI">
+<view class="sell-left">
+  <image mode="aspectFill" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E9%94%80%E5%94%AE01.png?sign=8a28f2beab06459c25790e5ce868bdbd&t=1596387056"></image>
+</view>
+<view class="sell-right">
+<!-- <text class="sell-right-title">销售数据分析已连接</text> -->
+<image mode="aspectFill" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%8A%AF%E7%89%8703.png?sign=353456dcda7220a15a1656dd5f90d437&t=1596390668"></image>
+<text class="sell-right-time">上次更新：\n{{importtime}}</text>
+</view>
+</view>
+<view wx:if="{{compare==1}}">
+  <view class="sellnew-title">销售金额<image class="newup" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%A2%9E%E5%8A%A0.png?sign=8fa37f58dc406f1b0c73edbb57b0aa52&t=1596358094"></image><text class="uptips">今日销售额上涨啦！</text></view>
+</view>
+<view wx:elif="{{compare==0}}">
+  <view class="sellnew-title">销售金额<image class="newup" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E4%B8%8B%E9%99%8D.png?sign=fb210e8f05f55c630de149faf4566333&t=1596964087"></image><text class="uptips">不要气馁！</text></view>
+</view>
+<view wx:else>
+  <view class="sellnew-title">销售金额<text class="uptips">暂无分析</text></view>
+</view>
+<view class="sell">
+  <view class="sell-items-dw">
+    <!-- <image class="sellbg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%83%8C%E6%99%AF%E5%9B%BE03.png?sign=d4108b2dcbe824e4b2f6efccf3ec70fe&t=1596354200"></image> -->
+    <image class="sellbg"  src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%8D%83%E5%BA%93%E7%BD%91_%E7%A7%91%E6%8A%80%E5%85%83%E7%B4%A0%E8%BE%B9%E6%A1%86%E9%AB%98%E6%B8%85%E5%9B%BE%E5%B7%B2%E8%A3%81%E5%89%AA.png?sign=28c3741be7323c1fa11f0369e030a9c1&t=1596963510"></image>
+    <view class="sell-items-po">
+      <view class="sell-items">
+        <view class="sell-item">
+            <view class="new">{{today}}</view>
+            <text>今日销售金额</text>
+        </view>
+        <view class="sell-item">
+          <view class="old">{{yesterday}}</view>
+          <text>昨日销售金额</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="task-title">达标</view>
+<view class="task">
+  <!-- <image class="task-bg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%8D%83%E5%BA%93%E7%BD%91_%E8%93%9D%E7%B4%AB%E8%89%B2%E6%B8%90%E5%8F%98%E5%8F%91%E5%85%89%E7%8E%B0%E4%BB%A3%E5%87%A0%E4%BD%95%E6%96%B9%E5%BD%A2%E7%A7%91%E6%8A%80%E8%BE%B9%E6%A1%86%E5%85%83%E7%B4%A0_%E5%85%83%E7%B4%A0%E7%BC%96%E5%8F%B710726218%E5%B7%B2%E8%A3%81%E5%89%AA.png?sign=da2fc5da21f5fb7a80070794fc219d47&t=1596963248"></image> -->
+  <view class="task-item">
+    <van-circle value="{{ turnover }}" color="{{ gradientColor }}" text="{{ turnover }}%" size="120"/>
+    <text>营业额</text>
+  </view>
+  <view class="task-item">
+    <van-circle value="{{CategoryTarget}}" color="{{ gradientColor2 }}" text="{{CategoryTarget}}%" size="120"/>
+    <text>类别</text>
+  </view>
+</view>
+<view class="sell-year-title">本月累计</view>
+<view class="sell-year">
+  <view class="sell-year-bg">
+  <image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E7%B2%92%E5%AD%90%E8%83%8C%E6%99%AF.png?sign=9723d9d642364392f28097b01327fce4&t=1596358970"></image>
+    <view class="sell-year-container">
+      <view class="sell-year-data">{{thisMonth}}</view>
+      <view class="sell-year-span">元</view>
+    </view>
+  </view>
+</view>
+<view class="tabs-title">最近销售情况</view>
+<van-tabs z-index="99" type="card" active="a" animated swipeable color="#F2991D" bind:change="onChange">
+  <van-tab title="最近七天" name="a">
+    <view style="width:95vw;height:700rpx;margin:0 auto">
+      <ec-canvas 
+      id="mychart-dom-bar-zx" 
+      canvas-id="mychart-bars" 
+      force-use-old-canvas="true" 
+      ec="{{ eczx }}">
+      </ec-canvas>
+    </view>
+  </van-tab>
+  <van-tab title="近二十天" name="b">
+    <view style="width:95vw;height:700rpx;margin:0 auto">
+      <ec-canvas 
+      id="mychart-dom-bar-zxtwo" 
+      canvas-id="mychart-bars" 
+      force-use-old-canvas="true"
+      ec="{{ eczxtwo }}">
+      </ec-canvas>
+      <!-- <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas> -->
+    </view>
+  </van-tab>
+</van-tabs>
+
+<view class="category-title">各类别销售情况</view>
+  <view style="width:100vw;height:700rpx;">
+    <ec-canvas 
+    id="mychart-dom-bar-bt" canvas-id="mychart-bar"
+    ec="{{ ecbt }}"
+    force-use-old-canvas="true">
+    </ec-canvas>
+  </view>
+<!-- 开发中 -->
+<!-- <view class="category-title">各类别近七天销售情况</view>
+<view class="dev">
+  <van-switch checked="{{ checked }}" bind:change="turnOnChange" />
+  <view wx:if="{{!checked}}">折线图销售分析和智能分析正在加急开发中。。。</view>
+</view> -->
+
+<van-dialog id="van-dialog" />

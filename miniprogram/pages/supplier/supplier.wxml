@@ -1,0 +1,20 @@
+<!--pages/supplier/supplier.wxml-->
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</van-dropdown-menu>
+
+<view class="item">
+  <view>供货商：恒枫饮料</view>
+  <view>业务员：焕然</view>
+  <view>地址：凤凰大道科技园02号</view>
+  <view>联系电话：18612304789</view>
+  <view>状态：正常供货</view>
+</view>
+<view class="item">
+  <view>供货商：新城食品</view>
+  <view>业务员：希风</view>
+  <view>地址：大学园路复兴街01号</view>
+  <view>联系电话：17386541265</view>
+  <view>状态：正常供货</view>
+</view>

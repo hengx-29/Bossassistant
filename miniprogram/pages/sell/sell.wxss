@@ -1,0 +1,237 @@
+/*销售数据分析*/
+.vantag{
+  margin-left: 20rpx;
+}
+/* .sell-head{
+  border-left: 5px solid #1296db;
+} */
+.sell-head{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 400rpx;
+}
+.sell-head .sell-left{
+  flex: 1;
+}
+.sell-head .sell-left image{
+  width: 400rpx;
+  height: 400rpx;
+}
+.sell-right{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sell-right image{
+  width: 300rpx;
+  height: 300rpx;
+  position: relative;
+  top: -25rpx;
+}
+.sell-right-time{
+  float: right;
+  padding-right: 2rpx;
+  font-size: 25rpx;
+  color: rgb(177, 173, 173);
+}
+/*销售数据分析标题*/
+.sell-right-title{
+  font-size: 1em;
+  /* color: rgb(132, 212, 237); */
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-left: 5px solid #1296db;
+}
+/*销售金额*/
+.sellnew-title{
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-left: 5px solid #1296db;
+  /* border-left: 5px solid #CA26FF; */
+}
+.uptips{
+  font-size: 0.6em;
+  color: rgb(163, 163, 163);
+}
+.sell{
+  width: 100vw;
+  height: 230rpx;
+  background-color: white;
+  margin:0 auto;
+  padding-top: 20rpx;
+}
+/*今天 昨天销售数据*/
+.sellbg{
+  width: 100%;
+  height: 100%;
+  /* height: 130rpx; */
+  z-index: -1;
+  /* position: relative; */
+  /* bottom: -62rpx; */
+}
+.sell-items-dw{
+  z-index: 9;
+  width: 100vw;
+  height: 230rpx;
+  position: relative;
+  margin: 0 auto;
+  /* height: 200rpx; */
+  /* position: absolute;
+  top: 100rpx; */
+  /* left: 50%;
+  top: 44%;
+  transform: translate(-50%,-50%); */
+}
+.sell-items-po{
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%,-50%);
+}
+.sell-items{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+.sell-item{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 50%;
+}
+/*上升下降*/
+.sell-item .new{
+  font-size: 2.3em;
+  color: #EB3F2F;
+}
+.newup{
+  width: 40rpx;
+  height: 30rpx;
+}
+.sell-item .old{
+  font-size: 2.3em;
+  color: #F29F3F;
+}
+.sell-item text{
+  font-size: 0.7em;
+  color: rgb(128, 127, 127);
+}
+/*达标区*/
+
+.van-circle__text{
+  /*字体变色*/
+  color:#3813C2 !important;
+}
+.task-title{
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-left: 5px solid #1296db;
+}
+.task{
+  display: flex;
+  flex-direction: row;
+}
+/* .task-bg{
+  width: 100%;
+} */
+.task-item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.task-item text{
+  color: rgb(128, 127, 127);
+  font-size: 0.8em;
+}
+/*本月销售数据*/
+.sell-year-title{
+  /* background-color: orange;
+  color: white;
+  border: 1px solid #eee;
+  border-radius: 20rpx;
+  padding: 10rpx; */
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-left: 5px solid #1296db;
+}
+.sell-year-bg{
+  position: relative;
+}
+.sell-year-bg image{
+  z-index: -1;
+  width: 100vw;
+  height: 160rpx;
+}
+.sell-year-container{
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: row;
+  align-items : flex-end; 
+}
+.sell-year-container .sell-year-data{
+  /* color: #1296db; */
+  font-size: 2.5em;
+  background-image: linear-gradient(135deg, deeppink, dodgerblue);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  color: transparent;
+}
+.sell-year-container .sell-year-span{
+  position: relative;
+  top: -10rpx;
+  margin-left: 8rpx;
+  color: gray;
+  font-size: 0.7em;
+}
+/*echarts图表*/
+/* ec-canvas {
+  width:100%;
+  height: 50%;
+} */
+/* .container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}  */
+#mychart-dom-bar{
+  margin-top: 20rpx;
+}
+/*最近销售情况标题*/
+.tabs-title{
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-left: 5px solid #1296db;
+  margin-bottom: 10rpx;
+}
+/*各类别销售情况标题*/
+.category-title{
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  border-left: 5px solid #1296db;
+  margin-bottom: 10rpx;
+}
+
+/*某些功能正在开发中*/
+.dev{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

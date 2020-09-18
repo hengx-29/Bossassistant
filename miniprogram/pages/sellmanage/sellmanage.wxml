@@ -1,0 +1,24 @@
+<!--pages/sellmanage/sellmanage.wxml-->
+<!-- <view>营业额</view>
+<input  placeholder="填入目标营业额"  bindinput="inpTargetTurnover" value="{{TargetTurnover}}"/>
+<button bindtap="btnTargetTurnover">修改</button> -->
+<view class="bg-view">
+  <image class="bg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%95%86%E5%8A%A1%E7%A7%91%E6%8A%80%E8%83%8C%E6%99%AF%E5%9B%BE.jpg?sign=f243196af8ea56f711f956e7870e0c15&t=1597381123" ></image>
+  <!-- mode="aspectFill" -->
+</view>
+<van-cell-group>
+  <van-field
+    value="{{ TargetTurnover }}"
+    center
+    clearable
+    label="目标营业额"
+    placeholder="填入目标营业额"
+    border="{{ false }}"
+    use-button-slot
+    bind:input="inpTargetTurnover"
+  >
+    <van-button slot="button" size="small" type="info" bindtap="btnTargetTurnover">修改</van-button>
+  </van-field>
+</van-cell-group>
+
+<van-notify id="van-notify" />

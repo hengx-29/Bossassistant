@@ -1,0 +1,275 @@
+
+/*头部*/
+.van-search{
+  background-color: #1296db !important;
+}
+.head-bg-block{
+  height: 100rpx;
+  border-radius: 0 0 50% 50%;
+  background-color: #1296db !important;
+}
+/*扫描*/
+.scanning{
+  width: 55rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -4rpx;
+}
+/*轮播图*/
+.swiper-img{
+  /* height: 400rpx; */
+  width: 90vw;
+  position: relative;
+  top: -85rpx;
+  margin:0 auto;
+  border-radius: 10rpx;
+}
+.swiper-img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+/*功能区*/
+.body-function{
+  border-radius: 20rpx;
+  width: 90vw;
+  margin: 0 auto;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  /* margin-bottom: 20rpx; */
+  position: relative;
+  top: -50rpx;
+  /* background-color: white; */
+  border: 1px solid #eee;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); */
+}
+.body-title{
+  margin-left: 15rpx;
+  padding-bottom: 10rpx;
+  background-color: white;
+  border-bottom: 2rpx solid #ccc;
+  font-size: 0.8em;
+  color: gray;
+}
+.body-bg{
+  width: 90vw;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  border-radius: 20rpx;
+  z-index: -1;
+}
+/*功能区*/
+.function-items{
+  padding-top: 15rpx;
+  /* padding: 50rpx; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content : space-around; */
+}
+/*功能区的每个小功能*/
+.function-item{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  flex: 1;
+}
+.function-item image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.function-item text{
+  font-size: 0.8em;
+  color: gray;
+}
+/*今日销售数据*/
+.sell{
+  width: 90vw;
+  margin: 0 auto;
+  background-color: white;
+  border: 2rpx solid #eee;
+  border-radius: 10rpx;
+}
+.sell-head{
+  margin-left: 15rpx;
+  color: gray;
+  margin-top:10rpx;
+  padding-bottom:10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.sell-head .sell-head-text{
+  font-size: 0.8em;
+}
+/*金额*/
+.sell-title{
+  padding-top: 15rpx;
+  padding-left: 15rpx;
+  font-size: 0.7em;
+  color: gray;
+}
+.sell-title text:nth-of-type(2){
+  float: right;
+  color: #ccc;
+  padding-right: 15rpx;
+}
+/*元*/
+.sell-bg{
+  position: relative;
+  width: 90vw;
+  height: 180rpx;
+}
+.sell-bg image{
+  z-index: -1;
+  width: 90vw;
+  height: 180rpx;
+  /* background-color: rgb(245, 241, 241); */
+  /* margin-top: 30rpx; */
+}
+.sell-bg .data-text{
+  /* height: 200rpx; */
+  /* line-height: 200rpx; */
+  /* width: 90vw; */
+  /* display: block;
+  margin:0 auto; */
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  transform: translate(-50%,-50%);
+}
+/* .data-text .sell-bg-data,.sell-bg-span{
+  display: flex;
+  flex-direction:row;
+} */
+.sell-bg .sell-bg-data{
+  font-size: 2.6em;
+  color: coral;
+}
+.sell-bg .sell-bg-span{
+  /* position: relative;
+  right: -20rpx; */
+  padding-left: 20rpx;
+  font-size: 0.9em;
+  color: rgb(148, 146, 146);
+}
+/* .sell{
+  width: 95vw;
+  background-color: white;
+  margin:0 auto;
+  padding-top: 20rpx;
+} */
+/*销售数据*/
+/* .sell-head{
+  border-left: 5px solid #1296db;
+}
+.sell-head text{
+  float: right;
+  font-size: 25rpx;
+}
+.sell-items{
+  display: flex;
+  flex-direction: row;
+}
+.sell-item{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 50%;
+}
+.sell-item view{
+  font-size: 1.2em;
+} */
+/*销售金额*/
+/* .sell-item text{
+  font-size: 0.8em;
+} */
+/*图表*/
+.tb{
+  z-index: 99;
+  background-color: white;
+  width:90vw;
+  height:400rpx;
+  /* border: 1px solid #eee; */
+  border-radius: 10rpx;
+  margin:0 auto;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+.viewelse{
+  width:90vw;
+  height:400rpx;
+}
+.tb-title{
+  margin-left: 15rpx;
+  padding-bottom: 10rpx;
+  background-color: white;
+  border-bottom: 2rpx solid #ccc;
+  font-size: 0.8em;
+  color: gray;
+}
+#mychart-dom-bar{
+  background-color: white;
+  z-index: 1;
+}
+/*底部图片*/
+.foot-bg image{
+  /* position: fixed;
+  bottom: 0; */
+  width: 100vw;
+  height: 80rpx;
+}
+
+
+
+/*查询商品弹出层*/
+.van-popup{
+  /* background-color: red !important; */
+  z-index: 999 !important;
+}
+.van-popup .goodlist{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+/*每个商品*/
+.goodlist-item{
+  /* background-color: white; */
+  /* width: 90%; */
+  width: 90vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  /* border-radius: 15rpx; */
+  /* padding:20rpx; */
+  /* border:1px solid #eee; */
+  /* margin-top: 30rpx; */
+  /* margin-bottom: 30rpx; */
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); */
+}
+/*商品名称*/
+.goodlist-item .barcode text{
+  font-size: 1.2em;
+  color: red;
+}
+.goodlist-item .price .purchaseprice{
+  font-size: 1.4em;
+  color: red;
+}
+.goodlist-item .price .sellingprice{
+  font-size: 1.1em;
+}
+/*标签*/
+.van-tag{
+  margin-right: 8rpx;
+}
+
+
+/*生成条形码*/
+.generatBbarcode{
+  width: 90vw;
+  height: 1000rpx;
+}

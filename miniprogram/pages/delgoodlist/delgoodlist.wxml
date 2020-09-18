@@ -1,0 +1,59 @@
+<!-- 搜索区 -->
+<van-search value="{{ search }}" placeholder="请输入搜索条形码或关键词" use-action-slot 
+bind:change="onChange" 
+bind:search="onSearch">
+	<view slot="action" bind:tap="onClick">
+		<image class="scanning" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E6%89%AB%E6%8F%8F.png?sign=485ba746907aee353da7dee008b7cc16&t=1595230672"></image>
+	</view>
+</van-search>
+<view wx:if="{{!search}}">
+	<van-empty image="search" description="搜索删除商品" />
+</view>
+<view wx:else>
+<view wx:if="{{vansearchtitle}}">
+	<view class="searchtitle">
+		<text class="searchtitle-head">搜索商品列表：</text>
+		<view class="searchtitle-foot">
+			<van-icon name="info-o" class="searchtitle-foot-img"/>
+			<text>左滑删除</text>
+		</view>
+	</view>
+</view>
+<!-- 数据为空显示，空列表 -->
+<view wx:if="{{vanempty}}">
+	<van-empty description="未查询到数据，请刷新页面" />
+</view>
+<view wx:else>
+	<!-- 商品渲染列表 -->
+	<view wx:for="{{goodlist}}" wx:key="index">
+		<van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose" data-id="{{item._id}}" data-idx="{{index}}">
+			<!-- <view slot="left">选择</view> -->
+		<van-cell-group>
+			<!-- <van-cell title="商品" value="左滑删除"/> -->
+			<view class="goodlist-item"  data-id="{{item._id}}" data-idx="{{index}}">
+			<view class="barcode">条形码：<text>{{item.barcode}}</text></view>
+			<view class="name">商品名：<text>{{item.name}}</text></view>
+			<view class="price">进价：<text class="purchaseprice">{{item.purchaseprice}}</text>元    售价：<text class="sellingprice">{{item.sellingprice}}</text>元</view>
+   	 	<van-tag color="#ff976a" plain>自编码：{{item.selfcode}}</van-tag>
+			<view>
+				<van-tag color="#f2826a">供货商：{{item.supplier}}</van-tag>
+				<van-tag type="success">类别：{{item.category}}</van-tag>
+				<van-tag color="#7232dd">规格：{{item.specification}}</van-tag>
+			</view>
+			<view class="goodlist-smallitem"></view>
+		</view>
+		</van-cell-group>
+			<view slot="right" class="viewdel" >
+				<text>删除</text>
+			</view>
+	</van-swipe-cell>
+	</view>
+</view>
+</view>
+
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />
+<!-- 消息通知 -->
+<van-notify id="van-notify" />
+<!-- 查询商品失败提示 -->
+<van-toast id="van-toast" />

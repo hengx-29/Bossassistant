@@ -1,0 +1,137 @@
+<!-- 搜索区 -->
+<view class="head-bg">
+  <van-search value="{{ search }}" placeholder="请输入搜索条形码" use-action-slot 
+  bind:change="onChange" 
+  bind:search="onSearch">
+    <view slot="action" bind:tap="onClick">
+      <image class="scanning" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E6%89%AB%E6%8F%8F.png?sign=485ba746907aee353da7dee008b7cc16&t=1595230672"></image>
+    </view>
+  </van-search>
+  <view class="head-bg-block">
+  </view>
+</view>
+<view class="swiper-img">
+		<swiper autoplay circular indicator-dots >
+			<swiper-item>
+				<image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%BD%AE%E6%92%AD%E5%9B%BE011.png?sign=8db8af4aba94969721dc55e8cc9b0ff3&t=1597296179" mode="aspectFill"/>
+			</swiper-item>
+			<swiper-item>
+				<image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%BD%AE%E6%92%AD%E5%9B%BE02.png?sign=aa537c27f65f81bbdbe4d5ad419d79ed&t=1597296717" mode="aspectFill"/>
+			</swiper-item>
+			<!-- <swiper-item>
+				<image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E9%9E%A0%E5%A9%A7%E7%A5%8E%E6%A8%AA%E5%9B%BE03.jpg?sign=a17015b3ace72531a047a0095710ee86&t=1596181144" mode="aspectFill"/>
+			</swiper-item> -->
+		</swiper>
+</view>
+
+<!-- 功能区 -->
+<view class="body-function">
+  <view class="body-title">功能</view>
+  <image class="body-bg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E7%B2%92%E5%AD%90%E8%83%8C%E6%99%AF02.png?sign=20c52c0815b300db1e2bc9b8a5f7b5a7&t=1596184593"></image>
+  <view class="function-items">
+    <view class="function-item" bindtap="goodlist">
+      <image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%95%86%E5%93%81%E5%BA%93.png?sign=7b730046a7f856d02cf1187139c10a7d&t=1595230498"></image>
+      <text>商品库</text>
+    </view>
+    <view class="function-item" bindtap="addgoodlist">
+      <image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%85%A5%E5%BA%93.png?sign=2444a9ccfe59c4b8ccb3f0db94e925fc&t=1595230974"></image>
+      <text>入库</text>
+    </view>
+    <view class="function-item" bindtap="delgoodlist">
+      <image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%87%BA%E5%BA%93.png?sign=7a1dacf7ec9b51ef6480f9184982d958&t=1595230545"></image>
+      <text>出库</text>
+    </view>
+  </view>
+</view>
+
+<!-- 数据展示 -->
+<view class="sell">
+  <view class="sell-head">
+    <text class="sell-head-text">今日销售数据</text>
+    <!-- <image></image> -->
+  </view>
+  <view class="sell-title">
+    <text>金额：</text><text>上次更新：{{importtime}}</text>
+  </view>
+  <view class="sell-bg">
+    <image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E7%B2%92%E5%AD%90%E8%83%8C%E6%99%AF.png?sign=607d22f81e569da24e326c678885a1f5&t=1596131792"></image>
+    <view class="data-text">
+      <text class="sell-bg-data">{{today}}</text>
+      <text class="sell-bg-span">元</text>
+    </view>
+  </view>
+  <!-- <view class="sell">
+    <view class="sell-head">销售数据<text>上次更新：2020-07-20 12:42:12</text></view>
+    <view class="sell-items">
+      <view class="sell-item">
+          <view>36785.00</view>
+          <text>今日销售金额</text>
+      </view>
+      <view class="sell-item">
+        <view>26789.30</view>
+        <text>昨日销售金额</text>
+      </view>
+    </view>
+  </view>
+  <view class="sell">
+    <view class="sell-head">销售图表</view>
+    <text>图表</text>
+  </view> -->
+</view>
+<!-- 图表 -->
+<view class="tb" wx:if="{{tbshow}}">
+  <view class="tb-title">今日销售分析</view>
+  <!-- <ec-canvas 
+  id="mychart-dom-bar" canvas-id="mychart-bar"
+  ec="{{ ec }}"
+  force-use-old-canvas="true">
+  </ec-canvas> -->
+  <ec-canvas 
+  id="mychart-dom-bar-bt" canvas-id="mychart-bar"
+  ec="{{ ecbt }}"
+  force-use-old-canvas="fale">
+  </ec-canvas>
+  <!-- <view>各类别销售情况</view> -->
+<!-- <view style="width:100vw;height:700rpx;">
+  <ec-canvas 
+  id="mychart-dom-bar-bt" canvas-id="mychart-bar"
+  ec="{{ ecbt }}"
+  force-use-old-canvas="true">
+  </ec-canvas>
+</view> -->
+</view>
+<view wx:else>
+  <view class="viewelse"></view>
+</view>
+<!-- <view>
+     <canvas canvas-id="barcode" class="generatBbarcode"/>
+     <view>{{codeStr}}</view>
+     <canvas canvas-id="qrcode" class="generatBbarcode"/>
+</view> -->
+<view class="foot-bg">
+  <image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%BA%95%E9%83%A8%E8%83%8C%E6%99%AF.png?sign=bcdf72785b964631c55d2d799a287f6d&t=1596130711"></image>
+</view>
+<!-- 查询商品成功弹窗遮罩层 -->
+<van-popup show="{{ show }}"
+  round 
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onClose">
+  <view class="goodlist">
+    <view class="goodlist-item">
+		<view class="barcode">条形码：<text>{{goodlist.barcode}}</text></view>
+		<view class="name">商品名称：<text>{{goodlist.name}}</text></view>
+		<view class="price">进价：<text class="purchaseprice">{{goodlist.purchaseprice}}</text>元    售价：<text class="sellingprice">{{goodlist.sellingprice}}</text>元</view>
+    <van-tag color="#ff976a" plain>自编码：{{goodlist.selfcode}}</van-tag>
+		<view>
+			<van-tag color="#f2826a">供货商：{{goodlist.supplier}}</van-tag>
+			<van-tag type="success">类别：{{goodlist.category}}</van-tag>
+			<van-tag color="#7232dd">规格：{{goodlist.specification}}</van-tag>
+		</view>
+	</view>
+  </view>
+</van-popup>
+<!-- 查询商品失败提示 -->
+<van-toast id="van-toast" />

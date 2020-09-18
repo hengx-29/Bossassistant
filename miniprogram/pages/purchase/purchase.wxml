@@ -1,0 +1,134 @@
+<van-grid direction="horizontal" column-num="3">
+  <van-grid-item icon="scan" text="扫描" bindtap="scanBluetooth"/>
+  <van-grid-item icon="exchange" text="连接" bindtap="buletoothConnect"/>
+  <van-grid-item icon="star-o" text="状态" bindtap="btn_GetState"/>
+</van-grid>
+<view class="bluetooth-head">
+	<view class="bluetooth-head-left">
+		<view>设备名称:{{deviceName}}</view>
+		<view>打印设备状态：{{State}}</view>
+		<!-- <image mode="aspectFill" class="scanBluetooth-bg" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%8D%83%E5%BA%93%E7%BD%91_%E7%AE%80%E7%BA%A6%E6%B8%90%E5%8F%98%E8%BE%B9%E6%A1%86%E5%AF%B9%E8%AF%9D%E6%A1%86_%E5%85%83%E7%B4%A0%E7%BC%96%E5%8F%B712434644.png?sign=aee0ce5251e21b2f42c8eda6d2ca50e1&t=1596869838"></image>
+		<view bindtap="scanBluetooth">
+		/点击扫描设备/
+		</view> -->
+		<!-- <button  type="primary"></button> -->
+		<!-- <view>设备名称:{{deviceName}}</view> -->
+	</view>
+	<view wx:if="{{buletoothConnect}}" class="bluetooth-head-right" bindtap="scanBluetooth">
+		<image class="bluetooth-img" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%93%9D%E7%89%99%E5%B7%B2%E8%BF%9E%E6%8E%A5.png?sign=465560818028930d6a4eac3af024fe10&t=1596782579"></image>
+		<view>已连接</view>
+	</view>
+	<view wx:else class="bluetooth-head-right" bindtap="scanBluetooth">
+		<image class="bluetooth-img" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%93%9D%E7%89%99%E6%9C%AA%E8%BF%9E%E6%8E%A5.png?sign=5d2e8e949f4dc150ae238f31cd6ccd51&t=1596782601"></image>
+		<view>未连接</view>
+	</view>
+</view>
+
+<!-- <view wx:for="{{dataList}}" wx:key="id">
+</view> -->
+<view class="title">{{printTitle}}</view>
+<view wx:for="{{inputList}}" wx:key="id">
+	<view class=".items-bg-view">
+			<image class="items-bg" mode="aspectFill" src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E8%93%9D%E8%89%B2%E7%A7%91%E6%8A%80%E8%BE%B9%E6%A1%86%E8%A3%81%E5%89%AA.png?sign=9cb8fa6b604f97652ffd580c05a61042&t=1596873125"></image>
+			<view class="items">
+				<view class="one">
+					<view class="indexs">序号:{{index+1}}</view>
+					<view class="ghs">
+						<text>供货商:</text>
+						<input placeholder="填入供货商名称" data-index="{{index+1}}" bindinput="inpGhs" value="{{item.ghsValue}}"/>
+					</view>
+				</view>
+				<view class="two">
+					<input class="barcode" placeholder="填入条形码{{index+1}}" data-index="{{index+1}}"  bindinput="inpBarcode" value="{{item.barCode}}"/>
+					<!-- more-o -->
+					<van-icon name="scan" class="scan" bind:click="onClickIcon" data-index="{{index+1}}"/>
+					<!-- 进价 -->
+					<view class="purchase">
+						<text>进价￥</text>
+						<input placeholder="填入进价{{index+1}}" data-index="{{index+1}}" name="purchase{{item}}" bindinput="inpPurchase" value="{{item.purchaseValue}}"/>
+					</view>
+					<!-- 步进器 -->
+					<van-stepper class="num" value="{{item.value}}" data-index="{{index+1}}" bind:change="numOnChange" async-change/>
+				</view>
+				<view class="three">
+					<!-- 商品名 -->
+					<input class="goodname" placeholder="填入商品名{{index+1}}" data-index="{{index+1}}"  bindinput="inpGoodname" value="{{item.goodName}}"/>
+					<!-- 规格 -->
+					<input class="specification" placeholder="填入规格{{index+1}}" data-index="{{index+1}}"  bindinput="inpSpecification" value="{{item.specification}}"/>
+					<!-- 小计 -->
+					<view class="sell" name="sell{{index+1}}" data-index="{{index+1}}">小计￥{{item.sell}}</view>
+				</view>
+			</view>
+		</view>
+	
+
+	
+	<!-- 添加删除按钮 -->
+	<view class="add-del-view">
+		<button data-index="{{index+1}}" bindtap="delmore">删除</button>
+		<button data-index="{{index+1}}"  bindtap="addmore" type="primary">添加</button>
+	</view>
+</view>
+	<!-- <view wx:if="{{true}}">
+	<text>供货商</text>
+	<input placeholder="输入供货商名称" value=""/>
+	</view> -->
+<view>
+<view class="addSum">
+	<!-- <button bindtap="addSum" hover-class="btn-hover" type="primary">合计</button> -->
+	<van-button class="Sumbtn" icon="gold-coin-o" plain hairline type="info" bindtap="addSum">
+  点击合计
+	</van-button>
+	<view class="SumNum"><text>{{sumNum}}</text><text>件</text></view>
+	<view class="SumPrice"><text>{{sumPrice}}</text><text>元</text></view>
+</view>
+</view>
+<!-- <button type="primary" bindtap="btn_GetState" disabled='{{btn_disabled}}'> 状态 </button>
+<view>状态：{{State}}</view> -->
+<!-- <button type="primary" bindtap="bindViewTap1" > 打印 </button> -->
+
+<!-- 空白填充 -->
+<view class="kg"></view>
+
+<!-- 底部工具栏 -->
+<van-goods-action>
+	<van-goods-action-icon icon="replay" text="重置" bindtap="replayPurchase"/>
+	<van-goods-action-icon icon="cart-o" text="采购单" info="{{purchaseDataCount}}" url="/pages/purchasemanage/purchasemanage"/>
+	<van-goods-action-icon icon="setting-o" text="设置" url="/pages/printsetup/printsetup" />
+	<!-- <van-goods-action-icon icon="star-o" bindtap="btn_GetState" disabled='{{btn_disabled}}' text="状态" /> -->
+	<van-goods-action-button text="保存采购单" type="warning" bindtap="savePurchase"/>
+	<van-goods-action-button text="打印预览" bindtap="bindViewTap1" disabled='{{btn_disabled}}'/>
+</van-goods-action>
+
+
+<!-- 扫描显示弹窗遮罩层 -->
+<van-popup show="{{ show }}"
+  round 
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onClose">
+	<view class="devices_summary">已发现 {{mydeviceList.length}} 个外围设备：</view>
+	<scroll-view class="device_list" scroll-y scroll-with-animation upper-threshold='50' scroll-top='50' scroll-left="10">
+			<!-- wx:key="index"  -->
+  	<view wx:for="{{mydeviceList}}" 
+			data-device-id="{{item.deviceId}}"
+   		data-name="{{item.name || item.localName}}"
+   		class="device_item"
+   		hover-class="device_item_hover" 
+   		data-title="{{item.deviceId}}"  
+			data-name="{{item.name}}"
+  		data-advertisData="{{item.advertisServiceUUIDs}}" 
+			wx:key="{{item.deviceId}}" 
+			bindtap="chooseDevice">
+    		<view style="font-size: 16px; color: #333;">设备名称:{{item.name}}</view>
+    		<view style="font-size: 10px">信号强度: {{item.RSSI}}dBm ({{utils.max(0, item.RSSI + 100)}}%)</view>
+    		<view style="font-size: 10px">DeviceID: {{item.deviceId}}</view>        
+  	</view>
+</scroll-view>
+</van-popup>
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<van-notify id="van-notify" />

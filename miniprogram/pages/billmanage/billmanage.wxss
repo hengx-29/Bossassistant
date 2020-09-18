@@ -1,0 +1,100 @@
+/* pages/billmanage/billmanage.wxss */
+/* .item{
+  margin-top: 20rpx;
+} */
+/*修改按钮*/
+.viewupdate{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  border-radius: 5rpx  !important;
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #FF534D;
+}
+/*账单组*/
+.group-item{
+  display:flex;
+  flex-direction: row;
+  width: 95vw;
+  /* border: 1rpx solid rgb(130, 128, 128); */
+  border-radius: 20rpx;
+  padding: 10rpx;
+  margin:0 auto;
+  margin-bottom: 15rpx;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+/*左边的view*/
+.viewleft-item{
+  flex: 80%;
+}
+/*右边的view*/
+.status{
+  flex: 20%;
+  position: relative;
+}
+.status image{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 85%;
+  height: 75%;
+}
+/*小标签*/
+.vantag-view van-tag:nth-of-type(1){
+  margin-right: 10rpx;
+}
+/*搜索商品列表：左滑修改*/
+.searchtitle{
+  margin-bottom: 8rpx;
+}
+.searchtitle-head{
+  font-size: 0.9em;
+  padding-left: 20rpx;
+}
+.searchtitle-foot{
+  float: right;
+  padding-right: 20rpx;
+  padding-top: 5rpx;
+  /* font-size: 0.9em; */
+  vertical-align: middle;
+  font-size: 0.8em;
+}
+.searchtitle-foot-img{
+  position: relative;
+  top: 5rpx;
+}
+.supplierprice{
+  position: relative;
+  top: 4rpx;
+  font-size: 1.4em;
+  color: red;
+}
+
+/*提交按钮样式*/
+.submitbtn{
+  /*字体颜色*/
+  color:#1989fa;
+  /*适配距离*/
+  position: relative;
+  top:2rpx;
+  border: none;
+  float: right;
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+}
+/*清除按钮边框*/
+.submitbtn::after {
+  border: none
+}

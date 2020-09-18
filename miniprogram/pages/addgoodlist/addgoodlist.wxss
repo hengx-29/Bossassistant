@@ -1,0 +1,54 @@
+/* pages/addgoodlist/addgoodlist.wxss */
+page{
+  background-color: ghostwhite;
+}
+.bg{
+  width: 100vw;
+  height: 100vh;
+  margin:0 auto;
+  z-index: -1;
+
+}
+/*表单*/
+.newform{
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  border-radius: 20rpx;
+}
+.formimg{
+  padding: 0rpx;
+  margin: 0rpx;
+  height: 100;
+  width: 80vw;
+  position: relative;
+  top: 30rpx;
+  /* position: absolute;
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%,-50%);
+  z-index: 999; */
+  /* background-color: transparent; */
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+}
+.btn button{
+  width: 50%;
+  /* border: none; */
+  border-radius: 0;
+  /* border: 0; */
+}
+.btn button:nth-of-type(1){
+  border-radius: 0 0 0 20rpx;
+}
+.btn button:nth-of-type(2){
+  border-radius: 0 0 20rpx 0;
+}
+.btn button::after {
+  border: none;
+}

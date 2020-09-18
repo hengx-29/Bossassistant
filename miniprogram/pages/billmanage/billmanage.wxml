@@ -1,0 +1,88 @@
+<!--pages/billmanage/billmanage.wxml-->
+<van-dropdown-menu >
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onSwitch1Change"/>
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onSwitch2Change"/>
+</van-dropdown-menu>
+
+<!-- <view class="item">
+  <view>供货商：恒枫饮料</view>
+  <view>
+    <text>业务员：焕然</text>
+    <text>联系电话：18612304789</text>
+  </view>
+  <view>状态：已结算</view>
+</view>
+<view class="item">
+  <view>供货商：新城食品</view>
+  <view>业务员：希风</view>
+  <view>联系电话：17386541265</view>
+  <view>状态：未结算</view>
+</view> -->
+<view class="searchtitle">
+		<text class="searchtitle-head">搜索账单列表：</text>
+		<view class="searchtitle-foot">
+			<van-icon name="info-o" class="searchtitle-foot-img"/>
+			<text>点击结算/左滑修改</text>
+		</view>
+</view>
+	<!-- 供货商账单渲染列表 -->
+	<view wx:for="{{billlist}}" wx:key="index">
+		<van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose" data-id="{{item._id}}" data-idx="{{index}}">
+			<van-cell-group>
+			<view class="group-item" data-id="{{item._id}}" data-idx="{{index}}" bindtap="updateStatus">
+				<view class="viewleft-item">
+					<view class="supplier">供货商：<text>{{item.supplier}}</text></view>
+					<view class="price">金额：<text class="supplierprice">{{item.price}}</text></view>
+					<view class="vantag-view">
+						<van-tag color="#009AD2">编号：{{item.selfcode}}</van-tag>
+						<van-tag color="#7232dd">时间：{{item.time}}</van-tag>
+					</view>
+					<view class="vantag-view">
+						<van-tag color="#FF9C1E">业务员：{{item.salesman}}</van-tag>
+						<van-tag color="#F30055">联系电话：{{item.phone}}</van-tag>
+					</view>
+				</view>
+				<view class="status">
+					<view wx:if="{{item.status=='0'}}">
+						<image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E6%9C%AA%E7%BB%93%E7%AE%97.jpg?sign=95773dc448ee207e1d1c2ae6ae016afe&t=1600168336"></image>
+					</view>
+					<view wx:elif="{{item.status=='1'}}">
+						<image src="https://6d79-mycloud-mecqe-1302268378.tcb.qcloud.la/%E8%80%81%E6%9D%BF%E5%8A%A9%E6%89%8B/%E5%B7%B2%E7%BB%93%E7%AE%97.jpg?sign=bdc07490cac8aa545c4b47774aa39319&t=1600238092" style="width:90%"></image>
+					</view>
+					<view wx:else></view>
+				</view>
+			</view>
+			</van-cell-group>
+			<view slot="right" class="viewupdate">
+				<text>修改</text>
+			</view>
+		</van-swipe-cell>
+	</view>
+
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />
+<!-- 消息通知 -->
+<van-notify id="van-notify" />
+<!-- 弹出框用于修改账单 -->
+<van-dialog
+  use-slot
+  title="账单详情"
+  show="{{ show }}"
+	confirmButtonText="修改"
+	show-confirm-button="{{false}}"
+  show-cancel-button
+  bind:cancel="dialogOnClose"
+>
+	<form bindsubmit="updatebilllist">
+		<van-cell-group>
+			<van-field required clearable label="供货商" name="supplier" placeholder="请输入供货商" value="{{supplier}}"/>
+			<van-field required clearable label="金额" name="price" placeholder="请输入金额" value="{{price}}" icon="warning-o" />
+			<van-field clearable label="供货商编号" name="selfcode" placeholder="请输入供货商编号" value="{{selfcode}}"/>
+			<van-field required clearable label="时间" name="time" placeholder="请输入时间" value="{{time}}" icon="more-o" bind:click-icon="onClickIcon"/>
+			<van-field clearable label="业务员" name="salesman" placeholder="请输入业务员" value="{{salesman}}"/>
+			<van-field clearable label="联系电话" name="phone" placeholder="请输入联系电话" value="{{phone}}"/>
+			<van-field required clearable label="账单状态" name="status" placeholder="请输入账单状态" value="{{status}}"/>
+		</van-cell-group>
+		<button formType="submit" class="submitbtn">修改</button>
+	</form>
+</van-dialog>
